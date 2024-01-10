@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "partner_service_adapter_server_consumer": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+
+    }
+  }
+}

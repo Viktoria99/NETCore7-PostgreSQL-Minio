@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Update="Properties\launchSettings.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+      </None>
+    </ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="System.Net.Http" Version="4.3.4" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\QrCodeService.Core\QrCodeService.Core.csproj" />
+	  <ProjectReference Include="..\QrCodeService.Database\QrCodeService.Database.csproj" />
+	  <ProjectReference Include="..\QrCodeService.Domain\QrCodeService.Domain.csproj" />
+	  <ProjectReference Include="..\QrCodeService.Minio\QrCodeService.Minio.csproj" />
+	  <ProjectReference Include="..\QrCodeService.Rabbit.Publisher\QrCodeService.Rabbit.Publisher.csproj" />
+	  <ProjectReference Include="..\QrCodeService.Rabbit.Types\QrCodeService.Rabbit.Types.csproj" />
+	</ItemGroup>
+</Project>

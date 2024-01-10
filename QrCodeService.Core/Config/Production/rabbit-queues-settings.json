@@ -1,0 +1,96 @@
+{
+  "RabbitSettings": {
+    "Hosts": [
+      {
+        "HostName": "rabbitmq",
+        "Port": 6000
+      }
+    ],
+    "UserName": "isds",
+    "Password": "fgjlsde001ff",
+    "Exchanges": [
+      {
+        "Name": "production.partner-server.v1",
+        "Type": "direct"
+      },
+      {
+        "Name": "production.partner-server.events",
+        "Type": "topic"
+      }
+    ],
+    "Queues": [
+      {
+        "Name": "production.partner-server.v1.internal.send_files",
+        "Durable": true,
+        "Exclusive": false,
+        "AutoDelete": false,
+        "Retry": {
+          "Name": "production.partner-server.v1.internal.send_files_delay",
+          "DelayTime": 2000,
+          "MaxRetryCount": 300,
+          "DeadLetterExchange": "production.partner-server.v1"
+        },
+        "Fail": {
+          "Name": "production.partner-server.v1.internal.send_files_failed",
+          "DeadLetterExchange": "production.partner-server.v1"
+        }
+      },
+      {
+        "Name": "production.partner-server.v1.internal.receive_qr_code",
+        "Durable": true,
+        "Exclusive": false,
+        "AutoDelete": false
+      }
+    ],
+    "Bindings": [
+      {
+        "QueueName": "production.partner-server.v1.internal.send_files",
+        "ExchangeName": "production.partner-server.v1",
+        "RoutingKey": "partner-server.internal.transport_invoice.send_article_document"
+      },
+      {
+        "QueueName": "production.partner-server.v1.internal.receive_qr_code",
+        "ExchangeName": "production.partner-server.v1",
+        "RoutingKey": "partner-server.v1.internal.receive_qr_code"
+      }
+    ],
+    "Listeners": [
+      {
+        "QueueName": "production.partner-server.v1.internal.send_files",
+        "MessageType": "QrCodeService.Rabbit.Types.Tasks.DocumentRabbitTask",
+        "TimeoutMilliseconds": 1200000,
+        "PrefetchCount": 5,
+        "ThreadLimit": 5
+      },
+      {
+        "QueueName": "production.partner-server.v1.internal.receive_qr_code",
+        "MessageType": "QrCodeService.Rabbit.Types.Tasks.QrCodeRabbitTask",
+        "TimeoutMilliseconds": 1200000,
+        "PrefetchCount": 5,
+        "ThreadLimit": 5
+      }
+    ],
+    "Publishers": [
+      {
+        "ExchangeName": "production.partner-server.v1",
+        "MessageType": "QrCodeService.Rabbit.Types.Tasks.DocumentRabbitTask",
+        "RoutingKey": "partner-server.internal.transport_invoice.send_article_document"
+      },
+      {
+        "ExchangeName": "production.partner-server.events",
+        "MessageType": "QrCodeService.Rabbit.Types.Tasks.EventRabbitTask",
+        "RoutingKey": "partner-server.business_action.*.answer_from_operator.*.*"
+      },
+      {
+        "ExchangeName": "production.partner-server.v1",
+        "MessageType": "QrCodeService.Rabbit.Types.Tasks.QrCodeRabbitTask",
+        "RoutingKey": "partner-adapter-server.v1.internal.receive_qr_code"
+      },
+      {
+        "ExchangeName": "production.partner-server.events",
+        "MessageType": "QrCodeService.Rabbit.Types.Tasks.QrCodeRabbitTask",
+        "RoutingKey": "partner-server.business_action.TransportInvoice.qr_from_operator.*.*"
+      }
+    ]
+  }
+}

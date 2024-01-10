@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Services\Extensions\**" />
+      <EmbeddedResource Remove="Services\Extensions\**" />
+      <None Remove="Services\Extensions\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\QrCodeService.Domain\QrCodeService.Domain.csproj" />
+      <ProjectReference Include="..\QrCodeService.Rabbit.Types\QrCodeService.Rabbit.Types.csproj" />
+      <ProjectReference Include="..\QrCodeService.Utilities\QrCodeService.Utilities.csproj" />
+    </ItemGroup>
+    
+</Project>

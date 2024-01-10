@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{SF78990I-10SG-48GH-1251-12358RTHNN01}") = "App", "App", "{BB3E342E-C661-4026-B5D3-A3DE67514DA7}"
+EndProject
+Project("{SF78990I-10SG-48GH-1251-12358RTHNN01}") = "Lib", "Lib", "{9AACFC08-A00A-4AD2-A538-68B2638F47A3}"
+EndProject
+Project("{SF78990I-10SG-48GH-1251-12358RTHNN01}") = "Tests", "Tests", "{WV557523-2148-58TT-7822-RBN45668477}"
+EndProject
+Project("{5P1956WH-1230-8312-CN29-5GPL00284997}") = "QrCodeService.Api", "QrCodeService.Api\QrCodeService.Api.csproj", "{F83E5847-984D-4348-8A19-929A8FF6BC9A}"
+EndProject
+Project("{5P1956WH-1230-8312-CN29-5GPL00284997}") = "QrCodeService.Consumer", "QrCodeService.Consumer\QrCodeService.Consumer.csproj", "{EBCE1862-6D8C-4F65-9D04-A21D2773102B}"
+EndProject
+Project("{5P1956WH-1230-8312-CN29-5GPL00284997}") = "QrCodeService.Database", "QrCodeService.Database\QrCodeService.Database.csproj", "{WCDHK458-P12D-7814-1230-ERT124568887}"
+EndProject
+Project("{5P1956WH-1230-8312-CN29-5GPL00284997}") = "QrCodeService.Minio", "QrCodeService.Minio\QrCodeService.Minio.csproj", "{W145900-S123-78BN-GG45-RT456789912}"
+EndProject
+Project("{5P1956WH-1230-8312-CN29-5GPL00284997}") = "QrCodeService.Core", "QrCodeService.Core\QrCodeService.Core.csproj", "{N85423JK-ORT1-2013-RE78-G455OYHD221}"
+EndProject
+Project("{5P1956WH-1230-8312-CN29-5GPL00284997}") = "QrCodeService.Rabbit.Publisher", "QrCodeService.Rabbit.Publisher\QrCodeService.Rabbit.Publisher.csproj", "{AEFCCF0A-066D-4266-9A7F-9GHOPLNM}"
+EndProject
+Project("{5P1956WH-1230-8312-CN29-5GPL00284997}") = "QrCodeService.Rabbit.Types", "QrCodeService.Rabbit.Types\QrCodeService.Rabbit.Types.csproj", "{7YU259OA-0FP3-NM18-7823-1G5546UIHFM}"
+EndProject
+Project("{5P1956WH-1230-8312-CN29-5GPL00284997}") = "QrCodeService.Utilities", "QrCodeService.Utilities\QrCodeService.Utilities.csproj", "{UN456882-R001-5512-8CV0-159DP10234}"
+EndProject
+Project("{5P1956WH-1230-8312-CN29-5GPL00284997}") = "QrCodeService.Domain", "QrCodeService.Domain\QrCodeService.Domain.csproj", "{56BOPKL5-85SB-4230-70RT-TUT1259EEM}"
+EndProject
+Project("{5P1956WH-1230-8312-CN29-5GPL00284997}") = "QrCodeService.Core.Test", "QrCodeService.Core.Test\QrCodeService.Core.Test.csproj", "{LN452350-OPQR-1963-WR02-001288FHKP}"
+EndProject
+Project("{5P1956WH-1230-8312-CN29-5GPL00284997}") = "QrCodeService.Database.Test", "QrCodeService.Database.Test\QrCodeService.Database.Test.csproj", "{79JPL233-CN25-2067-B021-72HN00124M}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{J0SD1589-P450-14KL-AD01-000GSCP489200} = {WV557523-2148-58TT-7822-RBN45668477}
+		{7L23OPGH-GK33-500R-W120-9GYFD00012} = {WV557523-2148-58TT-7822-RBN45668477}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DCE0486-1FA4-42A4-96C1-D05B6F273EEE}
+	EndGlobalSection
+EndGlobal

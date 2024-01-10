@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+     
+    <ItemGroup>
+      <ProjectReference Include="..\QrCodeService.Database\QrCodeService.Database.csproj" />
+      <ProjectReference Include="..\QrCodeService.Domain\QrCodeService.Domain.csproj" />
+      <ProjectReference Include="..\QrCodeService.Minio\QrCodeService.Minio.csproj" />
+      <ProjectReference Include="..\QrCodeService.Rabbit.Publisher\QrCodeService.Rabbit.Publisher.csproj" />
+      <ProjectReference Include="..\QrCodeService.Rabbit.Types\QrCodeService.Rabbit.Types.csproj" />
+      <ProjectReference Include="..\QrCodeService.Utilities\QrCodeService.Utilities.csproj" />
+      <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+      <PackageReference Include="Minio" Version="6.0.0" />
+      <PackageReference Include="NLog.Extensions.Logging" Version="5.2.3" />
+      <PackageReference Include="NLog.Web.AspNetCore" Version="5.2.1" />
+      <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+		<None Remove="Config\Development\appsettings.json" />
+		<None Remove="Config\Developmet\rabbit-queues-settings.json" />
+		<None Remove="Config\Developmet\nlog.config" />
+		<None Remove="Config\Production\appsettings.json" />
+		<None Remove="Config\Production\rabbit-queues-settings.json" />
+		<None Remove="Config\Production\nlog.config" />
+		<None Remove="Config\Staging\appsettings.json" />
+		<None Remove="Config\Staging\rabbit-queues-settings.json" />
+		<None Remove="Config\Staging\nlog.config" />		
+	</ItemGroup>
+	<ItemGroup>        
+        
+        <Content Include="Config\Development\appsettings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>		
+		<Content Include="Config\Development\rabbit-queues-settings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+		<Content Include="Config\Development\nlog.config">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>     
+        <Content Include="Config\Staging\appsettings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+		<Content Include="Config\Staging\rabbit-queues-settings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Config\Staging\nlog.config">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+        <Content Include="Config\Production\appsettings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+		<Content Include="Config\Production\rabbit-queues-settings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Config\Production\nlog.config">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>		
+	</ItemGroup>
+</Project>

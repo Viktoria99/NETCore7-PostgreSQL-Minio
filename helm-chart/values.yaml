@@ -1,0 +1,6 @@
+port: 80
+image: dev/applications/api/server
+imageTag: "%%PIPELINE_ID%%"
+imagePullPolicy: Always
+environment: production
+replicaCount: 2
